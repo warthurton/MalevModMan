@@ -1,0 +1,136 @@
+[General]
+Program name = Malevolence Mod Manager
+Program version = 1.0.0.0
+Windows 2000 = 1
+Windows XP = 1
+Windows Server 2003 = 1
+Windows Vista = 1
+Windows Server 2008 = 1
+Windows 7 = 1
+Windows 8 = 1
+Windows Server 2012 = 1
+Company name = Enemy Giant
+Website = http://
+SFA = 1
+DFA = 1
+Comp = 1
+[Graphics]
+Wizard image = C:\Projects\MsoaModManager\Art\Wizard_MMM.bmp
+Header image = C:\Projects\MsoaModManager\Art\Header_MMM.bmp
+Install-icon image = C:\Projects\MsoaModManager\msoaModManager.ico
+Show Label = 1
+Windows style = 1
+XpStyle = 1
+[Files]
+Include Zipfile = 0
+Zipfile = 
+Installation path = <programfiles>\<company>\<appname>\
+Autcip = 1
+[Uninstall]
+Vwau = 0
+Website = 
+Include uninstaller = 1
+Uninstaller filename = Uninstall
+[Licence]
+Licence dialog = 0
+[Finish]
+Sart program = 0
+Reboot computer = 0
+Execute DLL: = 0
+Program = <installpath>\
+Dll = 
+[Shortcuts]
+Allowtc = 0
+Shortcut path = <company>\<appname>
+[Serialoptions]
+Allows = 0
+Number = 20
+[SplashScreen]
+Image = 
+Sound = 
+Time = 2
+PlaySound = 0
+Allow = 0
+[Build]
+File = C:\Projects\MsoaModManager\Installer\Malevolence Mod Manager Setup.exe
+[Updater]
+Allow = 0
+1 = <appname>
+2 = <appversion>
+3 = http://
+4 = http://
+5 = http://
+6 = Update
+Language = 0
+RunProg = 
+RunProgs = 0
+Execdlls = 0
+[Languages]
+[Files/Dirs]
+C:\Projects\MsoaModManager\bin\Release\AutoUpdater.NET.dll
+231.5 KB
+dll
+C:\Projects\MsoaModManager\bin\Release\AutoUpdater.NET.pdb
+43.5 KB
+pdb
+C:\Projects\MsoaModManager\bin\Release\HtmlAgilityPack.dll
+131.5 KB
+dll
+C:\Projects\MsoaModManager\bin\Release\HtmlAgilityPack.pdb
+265.5 KB
+pdb
+C:\Projects\MsoaModManager\bin\Release\HtmlAgilityPack.xml
+120.1 KB
+xml
+C:\Projects\MsoaModManager\bin\Release\Ionic.Zip.dll
+452 KB
+dll
+C:\Projects\MsoaModManager\bin\Release\Ionic.Zip.xml
+888.8 KB
+xml
+C:\Projects\MsoaModManager\bin\Release\Malevolence Mod Manager.application
+2.1 KB
+application
+C:\Projects\MsoaModManager\bin\Release\Malevolence Mod Manager.exe
+584.5 KB
+exe
+C:\Projects\MsoaModManager\bin\Release\Malevolence Mod Manager.exe.config
+2.4 KB
+config
+C:\Projects\MsoaModManager\bin\Release\Malevolence Mod Manager.exe.manifest
+11.8 KB
+manifest
+C:\Projects\MsoaModManager\bin\Release\Malevolence Mod Manager.pdb
+61.5 KB
+pdb
+C:\Projects\MsoaModManager\bin\Release\Malevolence Mod Manager.vshost.application
+2.1 KB
+application
+C:\Projects\MsoaModManager\bin\Release\Malevolence Mod Manager.vshost.exe
+21.9 KB
+exe
+C:\Projects\MsoaModManager\bin\Release\Malevolence Mod Manager.vshost.exe.config
+2.4 KB
+config
+C:\Projects\MsoaModManager\bin\Release\Malevolence Mod Manager.vshost.exe.manifest
+11.8 KB
+manifest
+C:\Projects\MsoaModManager\bin\Release\WebKit.Interop.dll
+128 KB
+dll
+C:\Projects\MsoaModManager\bin\Release\WebKitBrowser.dll
+94 KB
+dll
+[Licence_Begin]
+[Licence_End]
+[Registry]
+[Variables]
+[SCs]
+Desktop
+Malevolence Mod Manager
+<installpath>\Malevolence Mod Manager.exe
+
+[IFP_End]
+[Serials]
+[Serials_End]
+[Commands]

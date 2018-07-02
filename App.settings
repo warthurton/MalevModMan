@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Malevolence_Mod_Manager" GeneratedClassName="App">
+  <Profiles />
+  <Settings>
+    <Setting Name="MSOADirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Visual Outbreak\Malevolence Game</Value>
+    </Setting>
+    <Setting Name="LastMod" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="GameVersion" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="modDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Please Create/Locate your Malevolence mod folder.</Value>
+    </Setting>
+    <Setting Name="ModList" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Vanilla</Value>
+    </Setting>
+    <Setting Name="AppWindowSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
+    </Setting>
+    <Setting Name="statFiles" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
