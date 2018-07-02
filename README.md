@@ -6,7 +6,7 @@ Initial release information by Kolgrima on *Malevolence: SoA* forums http://www.
 ---
 I’d like to introduce the Malevolence Mod Manager. This will allow you to easily install/uninstall any mods for MSoA. That’s right! Now you can manage all toughs’ mods for malevolence! What? There are not a ton of mods for Malevolence… then you best get to it and create some!
 
-*Needs new images created*
+*TODO: Needs new images created*
 
 User Feature list
 · Easy install of mods
@@ -22,7 +22,13 @@ Creator Feature list
 · Html rich descriptions (as complex or simple as you like)
 · Simple zip files no special formats (this way your mod can also be installed by hand)
 
+An additional Note
+
+Currently the mod manager has no priority system for merging mods with like files, that is to say when two mods affect the same file, the manager simply see it as a conflict, and will not allow the two to be installed in tandem. This is currently a shortcoming as just one file conflict stops mods from playing nicely. This will be my next feature I'll be adding to the mod manager, until then this is something to be aware of for both users and modders alike. 
+
 Here’s the Link to Download the Malevolence Mod Manager Installer.
+
+*TODO: Add link to new release*
 
 I’ve attempted to make the tool pretty straight forward, but just in case check out the tutorial below (or just dive right in)
 
@@ -58,7 +64,7 @@ If you want a template just create zip with your mod name in your mod folder, an
 4. Place all your html document files (images and html file/s) in a folder called “info” it must be called “info” for the manager to both recognize it, and keep it from getting copied to the game folder.
 5. Zip up all your files, the end result should look something like this;
 
-*Needs new images created*
+*TODO: Needs new images created*
 
 6. Test it out make sure it works.
 7. Release it to the hoards.
