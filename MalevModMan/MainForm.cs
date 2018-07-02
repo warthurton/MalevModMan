@@ -12,13 +12,13 @@ using AutoUpdaterDotNET;
 
 namespace Malevolence_Mod_Manager
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         private List<ModLoader> _mods;
 
         private List<ModLoader> _zippedMods;
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             
