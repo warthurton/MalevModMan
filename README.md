@@ -45,6 +45,7 @@ Modder tutorial:
 3. Create an info.html this uses special “version” and “author” tags for mod information.
 
 HTML:
+
 *Needs new images created*
 
 <span style="font-size:10px;"><version>v0.01</version></span><br>
@@ -67,4 +68,6 @@ If you want a template just create zip with your mod name in your mod folder, an
 I have only tested this on three machines as of this post, so I’m sure there will be bugs, feel free to report any you find here and I will try to fix them quickly. I hope you guys find this useful, and Happy Modding!
 
 Cheers
+
+
 ---
