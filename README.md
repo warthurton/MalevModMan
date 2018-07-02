@@ -6,7 +6,7 @@ Initial release information by Kolgrima on *Malevolence: SoA* forums http://www.
 ---
 I’d like to introduce the Malevolence Mod Manager. This will allow you to easily install/uninstall any mods for MSoA. That’s right! Now you can manage all toughs’ mods for malevolence! What? There are not a ton of mods for Malevolence… then you best get to it and create some!
 
-
+*Needs new images created*
 
 User Feature list
 · Easy install of mods
@@ -46,11 +46,9 @@ Modder tutorial:
 
 HTML:
 
-*Needs new images created*
+    <span style="font-size:10px;"><version>v0.01</version></span><br>
 
-<span style="font-size:10px;"><version>v0.01</version></span><br>
-
-<span style="font-size:10px;">Author: <author>Kolgrima</author></span>
+    <span style="font-size:10px;">Author: <author>Kolgrima</author></span>
 
 
 This is so you mod information shows up in the list view (even without these you mod name will still show up in the list)
