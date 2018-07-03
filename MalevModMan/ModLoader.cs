@@ -24,7 +24,7 @@ namespace Malevolence_Mod_Manager{
         public string author;
         public Uri htmlinfo;
 
-        public List<string> files;
+        //public List<string> Files;
 
         public List<string> zipFiles;
         
@@ -62,7 +62,7 @@ namespace Malevolence_Mod_Manager{
             modDir = App.Default.modDirectory + Path.DirectorySeparatorChar + name;
             modInfoDir = App.Default.modDirectory + Path.DirectorySeparatorChar + "Archive" + Path.DirectorySeparatorChar + name;
 
-            //get mod files
+            //get mod Files
             List<string> f = new List<string>();
             using (ZipFile zippedFile = ZipFile.Read(zipPath))
             {
@@ -141,7 +141,7 @@ namespace Malevolence_Mod_Manager{
 
         public void MigrateToGame()
         {
-            //foreach (string file in files)
+            //foreach (string file in Files)
             //{
                 MovetoGame();
 
@@ -154,7 +154,7 @@ namespace Malevolence_Mod_Manager{
 
         public void MovetoGame()
         {
-            //rewirte for zip files
+            //rewirte for zip Files
             try
             {
                 //string absPath = ToAbsolutePath(path);
@@ -199,10 +199,11 @@ namespace Malevolence_Mod_Manager{
                     MovetoGame();
                 else
                 {
-                    MessageBox.Show("Not all mod files transferred succesfully.\n" +
+                    MessageBox.Show("Not all mod Files transferred succesfully.\n" +
                                     "It is possible that your Malevolence installation is now corrupt.\n" +
                                     "Try running the game as Vanilla to fix any problems.\n" +
-                                    "If that doesn't work, run the Malevolence launcher and just verify your game files.  Malevolence will then re-download any corrupt or missing files.");
+                                    "If that doesn't work, run the Malevolence launcher and just verify your game Files.  Malevolence will then re-download any corrupt or missing Files.\n\n" +
+                                    ex.ToString());
 
                     if (result == DialogResult.Abort)
                     {
@@ -213,11 +214,11 @@ namespace Malevolence_Mod_Manager{
             }
         }
 
-        public List<string> GetConflictingFiles(ModLoader otherMod)
-        {
-            //return all files with the same name
-            return otherMod.files.Where(FileExists).ToList();
-        }
+        //public List<string> GetConflictingFiles(ModLoader otherMod)
+        //{
+        //    //return all Files with the same name
+        //    return otherMod.Files.Where(FileExists).ToList();
+        //}
 
         public void ExtractFromGame(string path)
         {
@@ -300,10 +301,11 @@ namespace Malevolence_Mod_Manager{
                     ExtractFromGame(path);
                 else
                 {
-                    MessageBox.Show("Not all mod files transferred succesfully.\n" +
+                    MessageBox.Show("Not all mod Files transferred succesfully.\n" +
                                     "It is possible that your Malevolence installation is now corrupt.\n" +
                                     "Try running the game as Vanilla to fix any problems.\n" +
-                                    "If that doesn't work, run the Malevolence launcher and just verify your game files.  Malevolence will then re-download any corrupt or missing files.");
+                                    "If that doesn't work, run the Malevolence launcher and just verify your game Files.  Malevolence will then re-download any corrupt or missing Files.\n\n" +
+                                    ex.ToString());
 
                     if (result == DialogResult.Abort)
                     {
@@ -349,7 +351,7 @@ namespace Malevolence_Mod_Manager{
                 //don't bother hidding sub folders
                 Directory.CreateDirectory(modArchivePath);
 
-                //we need to extract the info files
+                //we need to extract the info Files
                 using (ZipFile zip = ZipFile.Read(zipPath))
                 {
                     foreach (ZipEntry e in zip)

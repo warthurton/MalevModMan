@@ -31,7 +31,7 @@ namespace Malevolence_Mod_Manager
             //load mod manager info
 
             LoadMods();
-            displayInfoHTML();
+            DisplayInfoHtml();
         }
 
         private void validateGameDir()
@@ -55,10 +55,10 @@ namespace Malevolence_Mod_Manager
 
         private void Launch_Click(object sender, EventArgs e)
         {
-            if (LoadMod() != null)
+            if (LoadMod())
             {
                 //MessageBox.Show("Mods Loaded");
-                displayInfoHTML();
+                DisplayInfoHtml();
             }
             //Process.Start(App.Default.MSOADirectory + @"\MSoA.exe");
             else
@@ -213,7 +213,7 @@ namespace Malevolence_Mod_Manager
 
         private bool LoadMod()
         {
-            //first get the total file count using mod.files loop
+            //first get the total file count using mod.Files loop
 
             ListView.CheckedListViewItemCollection selectedMods = InstalledMods.CheckedItems;
 
@@ -278,15 +278,15 @@ namespace Malevolence_Mod_Manager
         {
             string modDir = App.Default.modDirectory;
 
-            //Assumes files are in the root of the zip file
+            //Assumes Files are in the root of the zip file
             FileInfo fileInf = new FileInfo(zipLocation);
             modDir += @"\"+fileInf.Name.Substring(0,fileInf.Name.IndexOf(".zip", StringComparison.OrdinalIgnoreCase));
             ZipFile.ExtractToDirectory(zipLocation, modDir);
 
-            //Check if we got any files
+            //Check if we got any Files
             FileInfo fInf = new FileInfo(modDir);
             if(Directory.GetFiles(modDir).Length < 1){
-                //Nope, no files so presumably there was a zipped folder in the archive.
+                //Nope, no Files so presumably there was a zipped folder in the archive.
                 //Undo and extract the folder directly.
                 Directory.Delete(modDir,true);
                 ZipArchive archive = ZipFile.Open(zipLocation, ZipArchiveMode.Read);
@@ -407,7 +407,7 @@ namespace Malevolence_Mod_Manager
             }
         }
 
-        private void displayInfoHTML()
+        private void DisplayInfoHtml()
         {
             string htmlPage = generateMainPage();
 
@@ -451,7 +451,7 @@ namespace Malevolence_Mod_Manager
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            displayInfoHTML();
+            DisplayInfoHtml();
         }
 
         private void setGameFolderToolStripMenuItem_Click(object sender, EventArgs e)
@@ -461,9 +461,10 @@ namespace Malevolence_Mod_Manager
             validateGameDir();
         }
 
-        //private void bindingSource1_CurrentChanged(object sender, EventArgs e)
-        //{
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
-        //}
     }
 }

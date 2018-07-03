@@ -35,21 +35,22 @@
             this.Version = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Author = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Launch = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mainFormMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.toolStripFileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.setGameFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setModFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.installNewModToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusModFolder = new System.Windows.Forms.ToolStripStatusLabel();
             this.ModDirToolText = new System.Windows.Forms.ToolStripStatusLabel();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.htmlDescription = new System.Windows.Forms.WebBrowser();
             this.ApplyProgressBar = new System.Windows.Forms.ProgressBar();
-            this.menuStrip1.SuspendLayout();
+            this.mainFormMenuStrip.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -101,72 +102,81 @@
             this.Launch.UseVisualStyleBackColor = true;
             this.Launch.Click += new System.EventHandler(this.Launch_Click);
             // 
-            // menuStrip1
+            // mainFormMenuStrip
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(3, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(487, 24);
-            this.menuStrip1.TabIndex = 9;
-            this.menuStrip1.Text = "menuStrip1";
+            this.mainFormMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripFileMenu});
+            this.mainFormMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.mainFormMenuStrip.Name = "mainFormMenuStrip";
+            this.mainFormMenuStrip.Padding = new System.Windows.Forms.Padding(3, 1, 0, 1);
+            this.mainFormMenuStrip.Size = new System.Drawing.Size(487, 24);
+            this.mainFormMenuStrip.TabIndex = 9;
+            this.mainFormMenuStrip.Text = "mainFormMenuStrip";
             // 
-            // toolStripMenuItem1
+            // toolStripFileMenu
             // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripFileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.setGameFolderToolStripMenuItem,
             this.setModFolderToolStripMenuItem,
             this.toolStripSeparator2,
             this.installNewModToolStripMenuItem,
             this.toolStripSeparator1,
-            this.aboutToolStripMenuItem});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(37, 22);
-            this.toolStripMenuItem1.Text = "File";
+            this.aboutToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.toolStripFileMenu.Name = "toolStripFileMenu";
+            this.toolStripFileMenu.Size = new System.Drawing.Size(37, 22);
+            this.toolStripFileMenu.Text = "File";
             // 
             // setGameFolderToolStripMenuItem
             // 
             this.setGameFolderToolStripMenuItem.Name = "setGameFolderToolStripMenuItem";
-            this.setGameFolderToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.setGameFolderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.setGameFolderToolStripMenuItem.Text = "Set Game Folder";
             this.setGameFolderToolStripMenuItem.Click += new System.EventHandler(this.setGameFolderToolStripMenuItem_Click);
             // 
             // setModFolderToolStripMenuItem
             // 
             this.setModFolderToolStripMenuItem.Name = "setModFolderToolStripMenuItem";
-            this.setModFolderToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.setModFolderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.setModFolderToolStripMenuItem.Text = "Set Mod Folder";
             this.setModFolderToolStripMenuItem.Click += new System.EventHandler(this.setModFolderToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(164, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // installNewModToolStripMenuItem
             // 
             this.installNewModToolStripMenuItem.Name = "installNewModToolStripMenuItem";
-            this.installNewModToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.installNewModToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.installNewModToolStripMenuItem.Text = "Open Mod Folder";
             this.installNewModToolStripMenuItem.Click += new System.EventHandler(this.installNewModToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(164, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.ShortcutKeyDisplayString = "";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
+            this.toolStripStatusModFolder,
             this.ModDirToolText});
             this.statusStrip1.Location = new System.Drawing.Point(0, 244);
             this.statusStrip1.Name = "statusStrip1";
@@ -175,21 +185,17 @@
             this.statusStrip1.TabIndex = 10;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatusLabel1
+            // toolStripStatusModFolder
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(68, 17);
-            this.toolStripStatusLabel1.Text = "Mod Folder";
+            this.toolStripStatusModFolder.Name = "toolStripStatusModFolder";
+            this.toolStripStatusModFolder.Size = new System.Drawing.Size(68, 17);
+            this.toolStripStatusModFolder.Text = "Mod Folder";
             // 
             // ModDirToolText
             // 
             this.ModDirToolText.Name = "ModDirToolText";
             this.ModDirToolText.Size = new System.Drawing.Size(16, 17);
             this.ModDirToolText.Text = "...";
-            // 
-            // bindingSource1
-            // 
-            //this.bindingSource1.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
             // 
             // htmlDescription
             // 
@@ -199,7 +205,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.htmlDescription.IsWebBrowserContextMenuEnabled = false;
             this.htmlDescription.Location = new System.Drawing.Point(344, 24);
-            this.htmlDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.htmlDescription.Margin = new System.Windows.Forms.Padding(2);
             this.htmlDescription.MinimumSize = new System.Drawing.Size(0, 10);
             this.htmlDescription.Name = "htmlDescription";
             this.htmlDescription.Size = new System.Drawing.Size(137, 203);
@@ -210,7 +216,7 @@
             // ApplyProgressBar
             // 
             this.ApplyProgressBar.Location = new System.Drawing.Point(200, 6);
-            this.ApplyProgressBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ApplyProgressBar.Margin = new System.Windows.Forms.Padding(2);
             this.ApplyProgressBar.Name = "ApplyProgressBar";
             this.ApplyProgressBar.Size = new System.Drawing.Size(140, 13);
             this.ApplyProgressBar.TabIndex = 12;
@@ -226,16 +232,16 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.Launch);
             this.Controls.Add(this.InstalledMods);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.mainFormMenuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.mainFormMenuStrip;
             this.MinimumSize = new System.Drawing.Size(383, 305);
             this.Name = "MainForm";
             this.Text = "Malevolence Mod Manager";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.mainFormMenuStrip.ResumeLayout(false);
+            this.mainFormMenuStrip.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
@@ -253,12 +259,12 @@
         private System.Windows.Forms.ColumnHeader Version;
         private System.Windows.Forms.ColumnHeader Author;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.MenuStrip mainFormMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem toolStripFileMenu;
         private System.Windows.Forms.ToolStripMenuItem setModFolderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem installNewModToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusModFolder;
         private System.Windows.Forms.ToolStripStatusLabel ModDirToolText;
         private System.Windows.Forms.WebBrowser htmlDescription;
         private System.Windows.Forms.ProgressBar ApplyProgressBar;
@@ -266,6 +272,7 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem setGameFolderToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }
 
