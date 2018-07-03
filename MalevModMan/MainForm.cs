@@ -23,7 +23,7 @@ namespace Malevolence_Mod_Manager
             InitializeComponent();
             
             //autoupdate
-            AutoUpdater.Start("http://enemygiant.net/Malevolence%20Mod%20Manager/Update/Malevolence%20Mod%20Manager.xml");
+            // AutoUpdater.Start("http://enemygiant.net/Malevolence%20Mod%20Manager/Update/Malevolence%20Mod%20Manager.xml");
 
             validateGameDir();
 
@@ -57,7 +57,8 @@ namespace Malevolence_Mod_Manager
         {
             if (LoadMod() != null)
             {
-                ;//MessageBox.Show("Mods Loaded");
+                //MessageBox.Show("Mods Loaded");
+                displayInfoHTML();
             }
             //Process.Start(App.Default.MSOADirectory + @"\MSoA.exe");
             else
@@ -389,7 +390,7 @@ namespace Malevolence_Mod_Manager
 
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (this.WindowState == FormWindowState.Normal)
             {
@@ -398,7 +399,7 @@ namespace Malevolence_Mod_Manager
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
             if (App.Default.AppWindowSize.Width != 0 && App.Default.AppWindowSize.Height != 0)
             {
@@ -420,7 +421,11 @@ namespace Malevolence_Mod_Manager
 
             //get the saved applied mod list
             List<string> modList = new List<string>();
-            modList.AddRange(App.Default.ModList.Split(','));
+
+            if (App.Default.ModList != null)
+            {
+                modList.AddRange(App.Default.ModList.Split(','));
+            }
 
             int modsIntalled = modList.Count;
             //check to see if it's just the Vanilla
@@ -456,5 +461,9 @@ namespace Malevolence_Mod_Manager
             validateGameDir();
         }
 
+        //private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+        //{
+
+        //}
     }
 }
