@@ -36,7 +36,7 @@ namespace Malevolence_Mod_Manager
             //reset stats
             App.Default.statFiles = 0;
 
-            MigrateVanillaFiles(); //figure out what vanilla files we haven't yet extracted and put them in vanilla
+            MigrateVanillaFiles(); //figure out what vanilla Files we haven't yet extracted and put them in vanilla
             
             ImportModFiles(); //import the mods
 

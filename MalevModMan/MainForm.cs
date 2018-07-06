@@ -12,18 +12,18 @@ using AutoUpdaterDotNET;
 
 namespace Malevolence_Mod_Manager
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         private List<ModLoader> _mods;
 
         private List<ModLoader> _zippedMods;
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             
             //autoupdate
-            AutoUpdater.Start("http://enemygiant.net/Malevolence%20Mod%20Manager/Update/Malevolence%20Mod%20Manager.xml");
+            // AutoUpdater.Start("http://enemygiant.net/Malevolence%20Mod%20Manager/Update/Malevolence%20Mod%20Manager.xml");
 
             validateGameDir();
 
@@ -31,7 +31,7 @@ namespace Malevolence_Mod_Manager
             //load mod manager info
 
             LoadMods();
-            displayInfoHTML();
+            DisplayInfoHtml();
         }
 
         private void validateGameDir()
@@ -55,11 +55,14 @@ namespace Malevolence_Mod_Manager
 
         private void Launch_Click(object sender, EventArgs e)
         {
-            if (LoadMod() != null)
+            if (LoadMod())
             {
-                ;//MessageBox.Show("Mods Loaded");
+                //MessageBox.Show("Mods Loaded");
+                //Process.Start(App.Default.MSOADirectory + @"\Malevolence Launcher.exe");
+                DisplayInfoHtml();
+
             }
-            //Process.Start(App.Default.MSOADirectory + @"\MSoA.exe");
+
             else
             {
                 MessageBox.Show("Could not load mods");
@@ -145,14 +148,14 @@ namespace Malevolence_Mod_Manager
 
         private void ManageVanilla(string modDir)
         {
-            string ArchivePath = modDir + @"\Archive";
-            if (!Directory.Exists(ArchivePath))
+            string archivePath = modDir + @"\Archive";
+            if (!Directory.Exists(archivePath))
             {
-                DirectoryInfo di = Directory.CreateDirectory(ArchivePath);
+                DirectoryInfo di = Directory.CreateDirectory(archivePath);
                 di.Attributes = FileAttributes.Directory | FileAttributes.Hidden;
                 //don't bother hidding sub folders
-                Directory.CreateDirectory(ArchivePath + Path.DirectorySeparatorChar + "Vanilla");
-                Directory.CreateDirectory(ArchivePath + Path.DirectorySeparatorChar + "Vanilla" + Path.DirectorySeparatorChar + "Info");
+                Directory.CreateDirectory(archivePath + Path.DirectorySeparatorChar + "Vanilla");
+                Directory.CreateDirectory(archivePath + Path.DirectorySeparatorChar + "Vanilla" + Path.DirectorySeparatorChar + "Info");
             }
             //we need to extract the embedded header PNG file
             Properties.Resources.MSOAlogo.Save(modDir + @"\Archive\Vanilla\Info\MSOAlogo.png");
@@ -192,7 +195,7 @@ namespace Malevolence_Mod_Manager
             return;
         }
 
-        public bool getProgressComplete()
+        public bool GetProgressComplete()
         {
             bool progUpdateDone = false;
 
@@ -212,7 +215,7 @@ namespace Malevolence_Mod_Manager
 
         private bool LoadMod()
         {
-            //first get the total file count using mod.files loop
+            //first get the total file count using mod.Files loop
 
             ListView.CheckedListViewItemCollection selectedMods = InstalledMods.CheckedItems;
 
@@ -277,15 +280,15 @@ namespace Malevolence_Mod_Manager
         {
             string modDir = App.Default.modDirectory;
 
-            //Assumes files are in the root of the zip file
+            //Assumes Files are in the root of the zip file
             FileInfo fileInf = new FileInfo(zipLocation);
             modDir += @"\"+fileInf.Name.Substring(0,fileInf.Name.IndexOf(".zip", StringComparison.OrdinalIgnoreCase));
             ZipFile.ExtractToDirectory(zipLocation, modDir);
 
-            //Check if we got any files
+            //Check if we got any Files
             FileInfo fInf = new FileInfo(modDir);
             if(Directory.GetFiles(modDir).Length < 1){
-                //Nope, no files so presumably there was a zipped folder in the archive.
+                //Nope, no Files so presumably there was a zipped folder in the archive.
                 //Undo and extract the folder directly.
                 Directory.Delete(modDir,true);
                 ZipArchive archive = ZipFile.Open(zipLocation, ZipArchiveMode.Read);
@@ -389,7 +392,7 @@ namespace Malevolence_Mod_Manager
 
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (this.WindowState == FormWindowState.Normal)
             {
@@ -398,7 +401,7 @@ namespace Malevolence_Mod_Manager
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
             if (App.Default.AppWindowSize.Width != 0 && App.Default.AppWindowSize.Height != 0)
             {
@@ -406,7 +409,7 @@ namespace Malevolence_Mod_Manager
             }
         }
 
-        private void displayInfoHTML()
+        private void DisplayInfoHtml()
         {
             string htmlPage = generateMainPage();
 
@@ -420,7 +423,11 @@ namespace Malevolence_Mod_Manager
 
             //get the saved applied mod list
             List<string> modList = new List<string>();
-            modList.AddRange(App.Default.ModList.Split(','));
+
+            if (App.Default.ModList != null)
+            {
+                modList.AddRange(App.Default.ModList.Split(','));
+            }
 
             int modsIntalled = modList.Count;
             //check to see if it's just the Vanilla
@@ -446,7 +453,7 @@ namespace Malevolence_Mod_Manager
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            displayInfoHTML();
+            DisplayInfoHtml();
         }
 
         private void setGameFolderToolStripMenuItem_Click(object sender, EventArgs e)
@@ -454,6 +461,11 @@ namespace Malevolence_Mod_Manager
             //start game folder selection here
             GetGameDir(0);
             validateGameDir();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
     }
