@@ -58,9 +58,11 @@ namespace Malevolence_Mod_Manager
             if (LoadMod())
             {
                 //MessageBox.Show("Mods Loaded");
+                //Process.Start(App.Default.MSOADirectory + @"\Malevolence Launcher.exe");
                 DisplayInfoHtml();
+
             }
-            //Process.Start(App.Default.MSOADirectory + @"\MSoA.exe");
+
             else
             {
                 MessageBox.Show("Could not load mods");
@@ -146,14 +148,14 @@ namespace Malevolence_Mod_Manager
 
         private void ManageVanilla(string modDir)
         {
-            string ArchivePath = modDir + @"\Archive";
-            if (!Directory.Exists(ArchivePath))
+            string archivePath = modDir + @"\Archive";
+            if (!Directory.Exists(archivePath))
             {
-                DirectoryInfo di = Directory.CreateDirectory(ArchivePath);
+                DirectoryInfo di = Directory.CreateDirectory(archivePath);
                 di.Attributes = FileAttributes.Directory | FileAttributes.Hidden;
                 //don't bother hidding sub folders
-                Directory.CreateDirectory(ArchivePath + Path.DirectorySeparatorChar + "Vanilla");
-                Directory.CreateDirectory(ArchivePath + Path.DirectorySeparatorChar + "Vanilla" + Path.DirectorySeparatorChar + "Info");
+                Directory.CreateDirectory(archivePath + Path.DirectorySeparatorChar + "Vanilla");
+                Directory.CreateDirectory(archivePath + Path.DirectorySeparatorChar + "Vanilla" + Path.DirectorySeparatorChar + "Info");
             }
             //we need to extract the embedded header PNG file
             Properties.Resources.MSOAlogo.Save(modDir + @"\Archive\Vanilla\Info\MSOAlogo.png");
@@ -193,7 +195,7 @@ namespace Malevolence_Mod_Manager
             return;
         }
 
-        public bool getProgressComplete()
+        public bool GetProgressComplete()
         {
             bool progUpdateDone = false;
 
