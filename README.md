@@ -4,6 +4,7 @@ Malevolence Mod Manager
 Initial release information by Kolgrima on *Malevolence: SoA* forums http://www.malevolencegame.com/forum/threads/malevolence-mod-manager.2416/
 
 Initial codebase by Kolgrima at commit https://github.com/warthurton/MalevModMan/commit/de15ab755b8ee3183742e0e12e43d31c1b428be1
+
 ---
 I’d like to introduce the Malevolence Mod Manager. This will allow you to easily install/uninstall any mods for MSoA. That’s right! Now you can manage all toughs’ mods for malevolence! What? There are not a ton of mods for Malevolence… then you best get to it and create some!
 
